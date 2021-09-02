@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <script src="./updateAddress.js"></script>
+        <link rel="stylesheet" href="details.css">
+        
+    </head>
+    <body onload="updateData()" style="background-image: url('https://i.pinimg.com/originals/c2/1e/d3/c21ed31ee1b234eee88e770a9cd24e61.jpg');" >
+        <div>
+          <img src="https://www.pngkit.com/png/full/372-3729814_profile-icon-my-profile-icon-png.png" alt="">
+          <h2 id="head">Update Address</h2>
+          <br>
+          <label for="fullname">User fullname : </label> 
+          <input type="text" id="fullname" >
+          <br>
+          <label for="address">User address :</label>   
+          <input type="text" id="address">
+          <br>
+          <label for="city">User city : </label> 
+          <input type="text" id="city">
+        <br>
+          <label for="state">User state : </label> 
+          <input type="text" id="state">
+        <br> 
+          <label for="pin">User pin : </label> 
+          <input type="text" id="pin">
+        <br>
+          <label for="phone">User phone : </label> 
+          <input type="text" id="phone">
+        <br>
+        <br><br>       
+     
+          <button onclick="updateNewData()">Submit</button>    
+          
+          <button style="background-color: red;color: white;"onclick="location.href = './addressBook.html';">cancel</button>
+            <!-- <button onclick="update()">click</button> -->
+        </div>
+    </body>
+</html>

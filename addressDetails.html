@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>
+            Address Details
+        </title>
+        <link rel="stylesheet" href="details.css">
+        <script>
+            function sendData(fullname,address,city,state,zip,phone){
+                var flag=0;
+                var getList=JSON.parse(localStorage.getItem("addressData"));
+                if(getList===null){
+                  flag=1;
+                }
+                if(flag===1){
+                  var id=1;
+                }else{
+                  var id=(getList.length)+1;
+                }                 
+                
+                var obj={
+                    "id":id,
+                    "fullname":fullname,
+                    "address":address,
+                    "city":city,
+                    "state":state,
+                    "zip":zip,
+                    "phone":phone
+                }
+
+                
+
+                if(getList!=undefined){
+                    getList.push(obj);
+                }else{
+                    getList=[obj];
+                }
+
+                localStorage.setItem("addressData",JSON.stringify(getList));
+                
+            }
+        </script>
+    </head>
+    <body>
+      <form action="./addressBook.html">
+        <div>
+          <img  src="https://i.pinimg.com/originals/e2/5c/43/e25c43c6a65bdca84c72f0c58524fcd6.png" alt="">
+        <h2>Address Details</h2><br>
+        <label for="fullname">User fullname : </label> 
+        <input type="text" id="fullname" >
+        <br>
+        <label for="address">User address :</label>   
+        <input type="text" id="address">
+        <br>
+        <label for="city">User city : </label> 
+        <input type="text" id="city">
+      <br>
+        <label for="state">User state : </label> 
+        <input type="text" id="state">
+      <br> 
+        <label for="zip">User zip : </label> 
+        <input type="text" id="zip">
+      <br>
+        <label for="phone">User phone : </label> 
+        <input type="text" id="phone">
+
+      <br><br>       
+   
+        <button onclick="sendData(
+            document.getElementById('fullname').value,
+            document.getElementById('address').value,
+            document.getElementById('city').value,
+            document.getElementById('state').value,
+            document.getElementById('zip').value,
+            document.getElementById('phone').value
+        )">Submit</button>    
+        
+        <button style="background-color: red;color: white;">cancel</button>
+       
+      </div>
+    </form>
+    </body>
+</html>
